@@ -6,15 +6,13 @@
 
 ## Team Members
 
-<< List team member names >>
-Philip Gorgy
-Matthew Chan
+Philip Gorgy, Matthew Chan
+
 ***
 
 ## Project Description
-Satirical and political debate simulator where two mysterious political figures argue to see who has the better argument.
 
-<< Give an overview of your project >>
+Satirical and political debate simulator where two mysterious political figures argue to see who has the better argument. The arguments are humourous, is meant to entertain.
 
 ***    
 
@@ -32,12 +30,13 @@ Satirical and political debate simulator where two mysterious political figures 
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
-
+1.  A dialogue randomizer 
+2.  A quit program 
+3.  Audiance reaction randomizer 
+4.  Say who won at the end
+5.  A betting feature
+  	
+To enable screen reader support, press Ctrl+Alt+Z To learn about keyboard shortcuts, press Ctrl+slashJoseph Kesler has left the document.
 ### Classes
 
 - << You should have a list of each of your classes with a description >>
