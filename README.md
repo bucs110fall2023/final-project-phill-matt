@@ -7,10 +7,12 @@
 ## Team Members
 
 << List team member names >>
-
+Philip Gorgy
+Matthew Chan
 ***
 
 ## Project Description
+Satirical and political debate simulator where two mysterious political figures argue to see who has the better argument.
 
 << Give an overview of your project >>
 
