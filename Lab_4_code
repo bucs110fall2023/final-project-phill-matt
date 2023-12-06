@@ -1,0 +1,121 @@
+import pygame 
+import random
+import math
+pygame.init()
+
+# Part B
+#Screen choosing
+screen= pygame.display.set_mode()
+width,height = pygame.display.get_window_size()
+
+hit_box_width = width / 2
+hit_box_height = height 
+
+hitboxes = {
+    "green": pygame.Rect(0, 0, hit_box_width, hit_box_height),
+    "yellow": pygame.Rect(0, 0, hit_box_width, hit_box_height),
+}
+
+hitboxes["green"].left = hitboxes["yellow"].right
+
+for box_color in hitboxes:
+    pygame.draw.rect(screen,box_color,hitboxes[box_color])
+
+pygame.display.flip()
+pygame.time.wait(2000)
+
+done = False # a flag variable to determine when the program is done
+
+guess = None
+while not guess:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if hitboxes["green"].collidepoint(event.pos):
+                guess="green"
+                
+            elif hitboxes["yellow"].collidepoint(event.pos):
+                guess="yellow"
+
+# Define main colors
+main_colors = {
+ "green": (200, 0, 0),
+ "yellow": (0, 200, 0),
+}
+
+font = pygame.font.Font(None, 48)
+
+order = list(hitboxes.keys()) # create a shuffle-able list of colors
+
+#Dartboard creation
+screen = pygame.display.set_mode()
+screen_size_variable= pygame.display.get_window_size()
+screen.fill("black")
+pygame.draw.circle(screen,"red",(screen_size_variable[0]/2,screen_size_variable[1]/2),screen_size_variable[1]/2)  
+pygame.display.flip()
+pygame.time.wait(300)
+pygame.draw.line(screen,"black",(screen_size_variable[0]/2 , 0),(screen_size_variable[0]/2,screen_size_variable[1]))
+pygame.display.flip()
+pygame.time.wait(400)
+pygame.draw.line(screen,"black",(0,screen_size_variable[1]/2),(screen_size_variable[0],screen_size_variable[1]/2))
+pygame.display.flip()
+pygame.time.wait(700)
+
+#Player score tracking set up
+player1score=0
+player2score=0
+
+#Part A for lab 4
+x2=screen_size_variable[0]/2
+y2=screen_size_variable[1]/2
+for i in range(20): 
+    x=random.randrange(0,screen_size_variable[0])
+    y=random.randrange(0,screen_size_variable[1])
+    distance_from_center = math.hypot(x-x2, y-y2) #the distance formula
+    is_in_circle = (distance_from_center <= screen_size_variable[1]/2) #screen width
+   
+    if  is_in_circle==True:
+        if i%2==0:  #This is making player 1 an even number, and player 2 an odd number
+            player1score+=1
+            pygame.draw.circle(screen,"green",(x,y),20/2)
+            pygame.display.flip()
+            pygame.time.wait(100)
+        else:
+            player2score+=1
+            pygame.draw.circle(screen,"yellow",(x,y),20/2)
+            pygame.display.flip()
+            pygame.time.wait(100)
+    else:
+            pygame.draw.circle(screen,"white",(x,y),20/2)
+            pygame.display.flip()
+            pygame.time.wait(100)
+
+    pygame.time.wait(200)
+
+#Results
+print("You guessed:",guess)
+if guess=="green":
+    if player1score > player2score:
+     print("Player green wins, you guessed right!")
+    elif player1score < player2score:
+     print("Player yellow wins, you're Wrong! LMAO!")
+
+else: 
+    if player1score > player2score:
+     print("Player green wins, you're Wrong! LMAO!")
+    elif player1score < player2score:
+     print("Player yellow wins, you guessed right!")
+
+if player1score == player2score:
+    print("It's a tie!")
+
+text = font.render("Player green wins, you're Wrong! LMAO!", True, "white")
+screen.blit(text, (20, 30))
+pygame.screen.flip()
+
+  
+        
+
+
+#radius=height/2
