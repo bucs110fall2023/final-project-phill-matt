@@ -1,11 +1,7 @@
 import pygame 
 import random
 import math
-pygame.init() 
-
-class UI:
-    def __init__():
-         
+pygame.init()
 
 # Part B
 #Screen choosing
@@ -28,7 +24,16 @@ for box_color in hitboxes:
 pygame.display.flip()
 pygame.time.wait(2000)
 
+done = False # a flag variable to determine when the program is done
 
-class Rectangle:
-#Method
-    def __init__(self, x, y, h, w):
+guess = None
+while not guess:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if hitboxes["green"].collidepoint(event.pos):
+                guess="green"
+                
+            elif hitboxes["yellow"].collidepoint(event.pos):
+                guess="yellow"
