@@ -1,9 +1,12 @@
+import pygame
+
 class Dialogue:
-    Questions = [
-        "interesting",
-        "aardvark",
-        "aaa",
-        "aeiouAEIOU",
-        "a b c d e f g h i j k l m n o p q r s t u v w x y z",
-        "",
-    ]
+
+    def askQuestion(Questions,num):
+        font = pygame.font.Font(None, 48)
+        window = pygame.display.set_mode()
+        x, y = pygame.display.get_window_size()
+        text = font.render(Questions[num], True, "white")
+        window.blit(text, (20, y/2))    
+        pygame.display.flip()
+        Questions[1]
