@@ -1,6 +1,7 @@
-import pygame
+import pygame 
 import random
 import sys
+
 
 class Game:
     def findsize(self):
@@ -173,3 +174,4 @@ class Game:
       pygame.time.wait(2000)
       pygame.quit()
       sys.exit()
+      
