@@ -2,8 +2,6 @@ import pygame
 import random
 import math
 pygame.init()
-import tkinter as tk
-from tkinter import messagebox
 
 # Part B
 #Screen choosing
