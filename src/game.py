@@ -1,7 +1,8 @@
 import pygame 
 import random
-import sys
-from endbutton import GameApp
+#from src.endgamebutton import GameApp
+#import tkinter as tk
+#from tkinter import messagebox
 
 class Game:
     def findsize(self):
@@ -130,7 +131,7 @@ class Game:
         TempQ = Questions
         TempD = D
         TempR = R
-        GameApp()
+       # GameApp()
         #The base score for the democrat and rebublican is 0
         TotalScoreD=0
         TotalScoreR=0
@@ -167,13 +168,3 @@ class Game:
             pygame.time.wait(1000)
             TempR.remove(i)
 
-    def game_over(self):
-      font = pygame.font.Font(None, 74)
-      text = font.render("Game Over", True, self.white)
-      self.screen.blit(text, (self.x // 2 - 200, self.y // 2 - 37))
-      pygame.display.flip()
-      pygame.time.wait(2000)
-      pygame.quit()
-      sys.exit()
-
-      
