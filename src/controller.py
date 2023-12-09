@@ -57,9 +57,9 @@ class Controller:
         #1. event loop
             for event in pygame.event.get():
                 #print(event)
-                #if event.type == pygame.QUIT:
-                    #pygame.quit()
-                    #sys.exit()
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
                 text = font.render("Which Presidential Candidate do you think will win?", True, "white")
                 window.blit(text, (20, y/2))    
                 pygame.display.flip()
@@ -196,4 +196,3 @@ class Controller:
             pygame.display.flip()
             pygame.time.wait(4000) 
 
-Controller()
