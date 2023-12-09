@@ -1,7 +1,7 @@
 import pygame
 from src.controller import Controller
-from src.endbutton import GameApp
-from game import Game
+from endbutton import GameApp
+from src.game import Game
 
 
 def main():
