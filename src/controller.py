@@ -1,7 +1,7 @@
 import pygame
 import math
 import random
-
+import sys
 
 class Controller:
   
@@ -58,7 +58,8 @@ class Controller:
             for event in pygame.event.get():
                 #print(event)
                 if event.type == pygame.QUIT:
-                    running = False
+                    pygame.quit()
+                    sys.exit()
                 text = font.render("Which Presidential Candidate do you think will win?", True, "white")
                 window.blit(text, (20, y/2))    
                 pygame.display.flip()
