@@ -2,16 +2,8 @@ import pygame
 import math
 import sys
 import random
-from dialogue import Dialogue
 
 class Controller:
-  
-    def mainloop(self):
-        pass
-
-        #select state loop
-
-        ### below are some sample loop states ###
   
     def __init__(self):
         pygame.init()
