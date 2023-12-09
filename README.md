@@ -9,7 +9,9 @@
 Philip Gorgy, Matthew Chan
 
 ***
-
+KNOWN ISSUES
+We tried to make a button in the UI for the purpose of closing the game, but we had constant trouble
+importing it. As such, it has been # out. In addition, the Scree closes right after running.
 ## Project Description
 
 Satirical and political debate simulator where two mysterious political figures argue to see who has the better argument. The arguments are humourous, is meant to entertain.
@@ -84,3 +86,6 @@ Test steps:
 3. When the game ends, verify who won and if the player was right
 Expected outcome: The player will be told that they win if they betted correctly, and lose if they did not.
 
+Other Modules used:
+import tkinter as tk
+from tkinter import messagebox - These two were used in making the end button UI
