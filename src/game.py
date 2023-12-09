@@ -1,5 +1,6 @@
 import pygame 
 import random
+import sys
 #from src.endgamebutton import GameApp
 #import tkinter as tk
 #from tkinter import messagebox
@@ -51,7 +52,8 @@ class Game:
             for event in pygame.event.get():
                 #print(event)
                 if event.type == pygame.QUIT:
-                    running = False
+                   pygame.quit()
+                   sys.exit()
                 text = font.render("Which Presidential Candidate do you think will win?", True, "white")
                 window.blit(text, (20, self.y/2))    
                 pygame.display.flip()
