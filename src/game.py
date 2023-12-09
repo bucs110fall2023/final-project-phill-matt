@@ -1,7 +1,7 @@
 import pygame 
 import random
 import sys
-
+from endbutton import GameApp
 
 class Game:
     def findsize(self):
@@ -130,11 +130,12 @@ class Game:
         TempQ = Questions
         TempD = D
         TempR = R
+        GameApp()
         #The base score for the democrat and rebublican is 0
         TotalScoreD=0
         TotalScoreR=0
         #Audience Text for rating the criminals, I mean politicians
-        for _ in range(17):
+        for _ in range(18):
             i = random.randint(0,TempQ.len)
             text = font.render("Question " + _ + " : " + TempQ[i], True, "white")
             window.blit(text, (20, self.y/2))    
@@ -174,4 +175,5 @@ class Game:
       pygame.time.wait(2000)
       pygame.quit()
       sys.exit()
+
       
