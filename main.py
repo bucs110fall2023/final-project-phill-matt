@@ -1,9 +1,12 @@
 import pygame
 from src.controller import Controller
+from src.endbutton import GameApp
+from game import Game
+
 
 def main():
     pygame.init()
-    that = Controller()
+    Game()
     #Create an instance on your controller object
     #Call your mainloop
     
